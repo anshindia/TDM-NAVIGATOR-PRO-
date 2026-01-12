@@ -1,4 +1,3 @@
-
 export enum DrugCategory {
   IMMUNOSUPPRESSANT = 'Immunosuppressants',
   ANTIEPILEPTIC = 'Anti-Epileptics',
@@ -8,7 +7,9 @@ export enum DrugCategory {
   RESPIRATORY = 'Respiratory',
   TOXICOLOGY = 'Toxicology & Addiction',
   IMMUNOMODULATOR = 'Immunomodulators',
-  ANTICANCER = 'Anticancer Agents / Oncology'
+  ANTICANCER = 'Anticancer Agents / Oncology',
+  BIOLOGIC = 'Biologics & Biosimilars',
+  SUBSTANCE_ABUSE = 'Substance Abuse & Performance Enhancers'
 }
 
 export interface DrugInfo {
@@ -21,9 +22,11 @@ export interface DrugInfo {
   container: string;
   therapeuticRange: string;
   toxicLevel?: string;
+  indication?: string;
+  dosing?: string;
   notes?: string;
   references?: string[];
-  recommendationLevel?: 'Mandatory' | 'Strongly recommended' | 'Recommended' | 'Selective';
+  recommendationLevel?: 'Mandatory' | 'Strongly recommended' | 'Recommended' | 'Selective' | 'Emerging';
 }
 
 export interface SearchResult {
